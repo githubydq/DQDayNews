@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="97" id="KGk-i7-Jjw" customClass="DQNewsTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="367" height="97"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="367" height="96"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5xc-fL-BAu">
+                        <rect key="frame" x="8" y="8" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="5xc-fL-BAu" secondAttribute="height" multiplier="1:1" id="uhR-yk-9rU"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="卢卡斯将大幅拉升觉得浪费就撒了飞机啊啦" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRg-sT-MmQ">
+                        <rect key="frame" x="98" y="8" width="261" height="67"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="苹果网上的福利" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OE-eL-kmc">
+                        <rect key="frame" x="98" y="75" width="141" height="13"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-10-10 10:10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSH-kS-lfp">
+                        <rect key="frame" x="239" y="75" width="120" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="E0Z-Af-L3U"/>
+                            <constraint firstAttribute="width" constant="120" id="dge-AV-frH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="5OE-eL-kmc" firstAttribute="height" secondItem="HSH-kS-lfp" secondAttribute="height" id="0DP-d9-ogS"/>
+                    <constraint firstItem="5OE-eL-kmc" firstAttribute="leading" secondItem="5xc-fL-BAu" secondAttribute="trailing" constant="10" id="5wx-PB-yFy"/>
+                    <constraint firstItem="XRg-sT-MmQ" firstAttribute="bottom" secondItem="HSH-kS-lfp" secondAttribute="top" id="C9v-la-mjt"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="5xc-fL-BAu" secondAttribute="bottom" id="Gu1-Ux-t18"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="HSH-kS-lfp" secondAttribute="bottom" id="ITv-Ci-ZlW"/>
+                    <constraint firstAttribute="topMargin" secondItem="XRg-sT-MmQ" secondAttribute="top" id="K3D-zm-Zm5"/>
+                    <constraint firstAttribute="topMargin" secondItem="5xc-fL-BAu" secondAttribute="top" id="Pw3-wO-ho1"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="HSH-kS-lfp" secondAttribute="trailing" id="WWS-Jg-B4Q"/>
+                    <constraint firstItem="5OE-eL-kmc" firstAttribute="trailing" secondItem="HSH-kS-lfp" secondAttribute="leading" id="YC8-Qy-LSI"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="5xc-fL-BAu" secondAttribute="leading" id="bgW-7J-aRS"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="XRg-sT-MmQ" secondAttribute="trailing" id="fkg-9z-q4A"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="5OE-eL-kmc" secondAttribute="bottom" id="qu8-bz-c02"/>
+                    <constraint firstItem="XRg-sT-MmQ" firstAttribute="leading" secondItem="5xc-fL-BAu" secondAttribute="trailing" constant="10" id="z4q-MO-zHn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="desc" destination="5OE-eL-kmc" id="Z4M-0R-uk3"/>
+                <outlet property="image" destination="5xc-fL-BAu" id="F1z-ef-p0M"/>
+                <outlet property="time" destination="HSH-kS-lfp" id="r4h-Fe-vaI"/>
+                <outlet property="title" destination="XRg-sT-MmQ" id="2C7-CL-QPD"/>
+            </connections>
+            <point key="canvasLocation" x="419.5" y="255.5"/>
+        </tableViewCell>
+    </objects>
+</document>

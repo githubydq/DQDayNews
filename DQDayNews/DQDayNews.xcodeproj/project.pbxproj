@@ -1,0 +1,569 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8CD8D12B0846A42C7EB6445E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BEE89DBF4C8184F84D51672 /* libPods.a */; };
+		B30D916A1CE5186700DD326A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D91691CE5186700DD326A /* main.m */; };
+		B30D916D1CE5186700DD326A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D916C1CE5186700DD326A /* AppDelegate.m */; };
+		B30D91701CE5186700DD326A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D916F1CE5186700DD326A /* ViewController.m */; };
+		B30D91731CE5186700DD326A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B30D91711CE5186700DD326A /* Main.storyboard */; };
+		B30D91751CE5186700DD326A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B30D91741CE5186700DD326A /* Assets.xcassets */; };
+		B30D91781CE5186700DD326A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B30D91761CE5186700DD326A /* LaunchScreen.storyboard */; };
+		B30D91881CE5186700DD326A /* DQNetServer.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D91871CE5186700DD326A /* DQNetServer.m */; };
+		B30D918D1CE5186700DD326A /* DQMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D918C1CE5186700DD326A /* DQMainViewController.m */; };
+		B30D91901CE5186700DD326A /* DQNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D918F1CE5186700DD326A /* DQNewsModel.m */; };
+		B30D91951CE5186700DD326A /* DQNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D91931CE5186700DD326A /* DQNewsViewController.m */; };
+		B30D91961CE5186700DD326A /* DQNewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30D91941CE5186700DD326A /* DQNewsViewController.xib */; };
+		B30D919B1CE5186700DD326A /* DQNewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D91991CE5186700DD326A /* DQNewsTableViewCell.m */; };
+		B30D919C1CE5186700DD326A /* DQNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30D919A1CE5186700DD326A /* DQNewsTableViewCell.xib */; };
+		B30D919E1CE5186700DD326A /* image.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B30D919D1CE5186700DD326A /* image.bundle */; };
+		B30D91A21CE5186700DD326A /* DQBaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D91A11CE5186700DD326A /* DQBaseNavViewController.m */; };
+		B30D91A61CE5186700DD326A /* DQNewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D91A41CE5186700DD326A /* DQNewsDetailViewController.m */; };
+		B30D91A71CE5186700DD326A /* DQNewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30D91A51CE5186700DD326A /* DQNewsDetailViewController.xib */; };
+		B3458D911CE573EA000E8AC2 /* DQSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3458D8F1CE573EA000E8AC2 /* DQSetViewController.m */; };
+		B3458D921CE573EA000E8AC2 /* DQSetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3458D901CE573EA000E8AC2 /* DQSetViewController.xib */; };
+		B3FE92231CE5FC82001B2EB9 /* DQShowImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FE92211CE5FC82001B2EB9 /* DQShowImageViewController.m */; };
+		B3FE92241CE5FC82001B2EB9 /* DQShowImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3FE92221CE5FC82001B2EB9 /* DQShowImageViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1BEE89DBF4C8184F84D51672 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		38C918C79C43CD8D431D065B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9F402E840F52AC063954B575 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B30D91651CE5186700DD326A /* DQDayNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DQDayNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B30D91691CE5186700DD326A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B30D916B1CE5186700DD326A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B30D916C1CE5186700DD326A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B30D916E1CE5186700DD326A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B30D916F1CE5186700DD326A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B30D91721CE5186700DD326A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B30D91741CE5186700DD326A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B30D91771CE5186700DD326A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B30D91791CE5186700DD326A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B30D91851CE5186700DD326A /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		B30D91861CE5186700DD326A /* DQNetServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQNetServer.h; sourceTree = "<group>"; };
+		B30D91871CE5186700DD326A /* DQNetServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQNetServer.m; sourceTree = "<group>"; };
+		B30D918B1CE5186700DD326A /* DQMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQMainViewController.h; sourceTree = "<group>"; };
+		B30D918C1CE5186700DD326A /* DQMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMainViewController.m; sourceTree = "<group>"; };
+		B30D918E1CE5186700DD326A /* DQNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQNewsModel.h; sourceTree = "<group>"; };
+		B30D918F1CE5186700DD326A /* DQNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQNewsModel.m; sourceTree = "<group>"; };
+		B30D91921CE5186700DD326A /* DQNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQNewsViewController.h; sourceTree = "<group>"; };
+		B30D91931CE5186700DD326A /* DQNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQNewsViewController.m; sourceTree = "<group>"; };
+		B30D91941CE5186700DD326A /* DQNewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DQNewsViewController.xib; sourceTree = "<group>"; };
+		B30D91981CE5186700DD326A /* DQNewsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQNewsTableViewCell.h; sourceTree = "<group>"; };
+		B30D91991CE5186700DD326A /* DQNewsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQNewsTableViewCell.m; sourceTree = "<group>"; };
+		B30D919A1CE5186700DD326A /* DQNewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DQNewsTableViewCell.xib; sourceTree = "<group>"; };
+		B30D919D1CE5186700DD326A /* image.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = image.bundle; sourceTree = "<group>"; };
+		B30D91A01CE5186700DD326A /* DQBaseNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQBaseNavViewController.h; sourceTree = "<group>"; };
+		B30D91A11CE5186700DD326A /* DQBaseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQBaseNavViewController.m; sourceTree = "<group>"; };
+		B30D91A31CE5186700DD326A /* DQNewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQNewsDetailViewController.h; sourceTree = "<group>"; };
+		B30D91A41CE5186700DD326A /* DQNewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQNewsDetailViewController.m; sourceTree = "<group>"; };
+		B30D91A51CE5186700DD326A /* DQNewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DQNewsDetailViewController.xib; sourceTree = "<group>"; };
+		B3458D8E1CE573EA000E8AC2 /* DQSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQSetViewController.h; sourceTree = "<group>"; };
+		B3458D8F1CE573EA000E8AC2 /* DQSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQSetViewController.m; sourceTree = "<group>"; };
+		B3458D901CE573EA000E8AC2 /* DQSetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DQSetViewController.xib; sourceTree = "<group>"; };
+		B3FE92201CE5FC82001B2EB9 /* DQShowImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQShowImageViewController.h; sourceTree = "<group>"; };
+		B3FE92211CE5FC82001B2EB9 /* DQShowImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQShowImageViewController.m; sourceTree = "<group>"; };
+		B3FE92221CE5FC82001B2EB9 /* DQShowImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DQShowImageViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B30D91621CE5186600DD326A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CD8D12B0846A42C7EB6445E /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4E9F123096052F9D07A69679 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				38C918C79C43CD8D431D065B /* Pods.debug.xcconfig */,
+				9F402E840F52AC063954B575 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B30D915C1CE5186600DD326A = {
+			isa = PBXGroup;
+			children = (
+				B30D91671CE5186700DD326A /* DQDayNews */,
+				B30D91661CE5186700DD326A /* Products */,
+				4E9F123096052F9D07A69679 /* Pods */,
+				EA7188EA7725624E6EEED4CD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B30D91661CE5186700DD326A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B30D91651CE5186700DD326A /* DQDayNews.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B30D91671CE5186700DD326A /* DQDayNews */ = {
+			isa = PBXGroup;
+			children = (
+				B30D917F1CE5186700DD326A /* Common */,
+				B30D91831CE5186700DD326A /* Server */,
+				B30D91801CE5186700DD326A /* Controller */,
+				B30D91811CE5186700DD326A /* Model */,
+				B30D91841CE5186700DD326A /* View */,
+				B30D91821CE5186700DD326A /* Resourse */,
+				B30D916B1CE5186700DD326A /* AppDelegate.h */,
+				B30D916C1CE5186700DD326A /* AppDelegate.m */,
+				B30D916E1CE5186700DD326A /* ViewController.h */,
+				B30D916F1CE5186700DD326A /* ViewController.m */,
+				B30D91711CE5186700DD326A /* Main.storyboard */,
+				B30D91741CE5186700DD326A /* Assets.xcassets */,
+				B30D91761CE5186700DD326A /* LaunchScreen.storyboard */,
+				B30D91791CE5186700DD326A /* Info.plist */,
+				B30D91851CE5186700DD326A /* PrefixHeader.pch */,
+				B30D91681CE5186700DD326A /* Supporting Files */,
+			);
+			path = DQDayNews;
+			sourceTree = "<group>";
+		};
+		B30D91681CE5186700DD326A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B30D91691CE5186700DD326A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B30D917F1CE5186700DD326A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B30D91801CE5186700DD326A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B30D919F1CE5186700DD326A /* Base */,
+				B30D91891CE5186700DD326A /* Main */,
+				B30D918A1CE5186700DD326A /* Welcome */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B30D91811CE5186700DD326A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B30D918E1CE5186700DD326A /* DQNewsModel.h */,
+				B30D918F1CE5186700DD326A /* DQNewsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B30D91821CE5186700DD326A /* Resourse */ = {
+			isa = PBXGroup;
+			children = (
+				B30D919D1CE5186700DD326A /* image.bundle */,
+			);
+			path = Resourse;
+			sourceTree = "<group>";
+		};
+		B30D91831CE5186700DD326A /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				B30D91861CE5186700DD326A /* DQNetServer.h */,
+				B30D91871CE5186700DD326A /* DQNetServer.m */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		B30D91841CE5186700DD326A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B30D91971CE5186700DD326A /* tableviewcell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B30D91891CE5186700DD326A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B30D918B1CE5186700DD326A /* DQMainViewController.h */,
+				B30D918C1CE5186700DD326A /* DQMainViewController.m */,
+				B30D91911CE5186700DD326A /* news */,
+				B3458D8D1CE573DC000E8AC2 /* set */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B30D918A1CE5186700DD326A /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		B30D91911CE5186700DD326A /* news */ = {
+			isa = PBXGroup;
+			children = (
+				B30D91921CE5186700DD326A /* DQNewsViewController.h */,
+				B30D91931CE5186700DD326A /* DQNewsViewController.m */,
+				B30D91941CE5186700DD326A /* DQNewsViewController.xib */,
+				B30D91A31CE5186700DD326A /* DQNewsDetailViewController.h */,
+				B30D91A41CE5186700DD326A /* DQNewsDetailViewController.m */,
+				B30D91A51CE5186700DD326A /* DQNewsDetailViewController.xib */,
+				B3FE92201CE5FC82001B2EB9 /* DQShowImageViewController.h */,
+				B3FE92211CE5FC82001B2EB9 /* DQShowImageViewController.m */,
+				B3FE92221CE5FC82001B2EB9 /* DQShowImageViewController.xib */,
+			);
+			path = news;
+			sourceTree = "<group>";
+		};
+		B30D91971CE5186700DD326A /* tableviewcell */ = {
+			isa = PBXGroup;
+			children = (
+				B30D91981CE5186700DD326A /* DQNewsTableViewCell.h */,
+				B30D91991CE5186700DD326A /* DQNewsTableViewCell.m */,
+				B30D919A1CE5186700DD326A /* DQNewsTableViewCell.xib */,
+			);
+			path = tableviewcell;
+			sourceTree = "<group>";
+		};
+		B30D919F1CE5186700DD326A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B30D91A01CE5186700DD326A /* DQBaseNavViewController.h */,
+				B30D91A11CE5186700DD326A /* DQBaseNavViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		B3458D8D1CE573DC000E8AC2 /* set */ = {
+			isa = PBXGroup;
+			children = (
+				B3458D8E1CE573EA000E8AC2 /* DQSetViewController.h */,
+				B3458D8F1CE573EA000E8AC2 /* DQSetViewController.m */,
+				B3458D901CE573EA000E8AC2 /* DQSetViewController.xib */,
+			);
+			path = set;
+			sourceTree = "<group>";
+		};
+		EA7188EA7725624E6EEED4CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1BEE89DBF4C8184F84D51672 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B30D91641CE5186600DD326A /* DQDayNews */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B30D917C1CE5186700DD326A /* Build configuration list for PBXNativeTarget "DQDayNews" */;
+			buildPhases = (
+				3F6F2E995EBDD12178755589 /* Check Pods Manifest.lock */,
+				B30D91611CE5186600DD326A /* Sources */,
+				B30D91621CE5186600DD326A /* Frameworks */,
+				B30D91631CE5186600DD326A /* Resources */,
+				3DC5F0CD88B822BF6C8B5CA5 /* Embed Pods Frameworks */,
+				084D49DC7EBD596FDCEBD633 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DQDayNews;
+			productName = DQDayNews;
+			productReference = B30D91651CE5186700DD326A /* DQDayNews.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B30D915D1CE5186600DD326A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DQ;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = youdingquan;
+				TargetAttributes = {
+					B30D91641CE5186600DD326A = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 22N43T8TU4;
+					};
+				};
+			};
+			buildConfigurationList = B30D91601CE5186600DD326A /* Build configuration list for PBXProject "DQDayNews" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B30D915C1CE5186600DD326A;
+			productRefGroup = B30D91661CE5186700DD326A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B30D91641CE5186600DD326A /* DQDayNews */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B30D91631CE5186600DD326A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3458D921CE573EA000E8AC2 /* DQSetViewController.xib in Resources */,
+				B3FE92241CE5FC82001B2EB9 /* DQShowImageViewController.xib in Resources */,
+				B30D91781CE5186700DD326A /* LaunchScreen.storyboard in Resources */,
+				B30D919E1CE5186700DD326A /* image.bundle in Resources */,
+				B30D91751CE5186700DD326A /* Assets.xcassets in Resources */,
+				B30D919C1CE5186700DD326A /* DQNewsTableViewCell.xib in Resources */,
+				B30D91961CE5186700DD326A /* DQNewsViewController.xib in Resources */,
+				B30D91731CE5186700DD326A /* Main.storyboard in Resources */,
+				B30D91A71CE5186700DD326A /* DQNewsDetailViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		084D49DC7EBD596FDCEBD633 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3DC5F0CD88B822BF6C8B5CA5 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F6F2E995EBDD12178755589 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B30D91611CE5186600DD326A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B30D91701CE5186700DD326A /* ViewController.m in Sources */,
+				B30D91951CE5186700DD326A /* DQNewsViewController.m in Sources */,
+				B3458D911CE573EA000E8AC2 /* DQSetViewController.m in Sources */,
+				B30D916D1CE5186700DD326A /* AppDelegate.m in Sources */,
+				B30D916A1CE5186700DD326A /* main.m in Sources */,
+				B30D91901CE5186700DD326A /* DQNewsModel.m in Sources */,
+				B30D91A61CE5186700DD326A /* DQNewsDetailViewController.m in Sources */,
+				B30D919B1CE5186700DD326A /* DQNewsTableViewCell.m in Sources */,
+				B30D91A21CE5186700DD326A /* DQBaseNavViewController.m in Sources */,
+				B30D91881CE5186700DD326A /* DQNetServer.m in Sources */,
+				B3FE92231CE5FC82001B2EB9 /* DQShowImageViewController.m in Sources */,
+				B30D918D1CE5186700DD326A /* DQMainViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B30D91711CE5186700DD326A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B30D91721CE5186700DD326A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B30D91761CE5186700DD326A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B30D91771CE5186700DD326A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B30D917A1CE5186700DD326A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B30D917B1CE5186700DD326A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B30D917D1CE5186700DD326A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 38C918C79C43CD8D431D065B /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: ydq19920924@icloud.com (Y7MKB6E9RY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREFIX_HEADER = "${SRCROOT}/DQDayNews/PrefixHeader.pch";
+				INFOPLIST_FILE = DQDayNews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ydq.MM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "93a6cb14-8ef1-41a3-82da-fcce0486e1d8";
+			};
+			name = Debug;
+		};
+		B30D917E1CE5186700DD326A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F402E840F52AC063954B575 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: ydq19920924@icloud.com (Y7MKB6E9RY)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREFIX_HEADER = "${SRCROOT}/DQDayNews/PrefixHeader.pch";
+				INFOPLIST_FILE = DQDayNews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ydq.MM;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "93a6cb14-8ef1-41a3-82da-fcce0486e1d8";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B30D91601CE5186600DD326A /* Build configuration list for PBXProject "DQDayNews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B30D917A1CE5186700DD326A /* Debug */,
+				B30D917B1CE5186700DD326A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B30D917C1CE5186700DD326A /* Build configuration list for PBXNativeTarget "DQDayNews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B30D917D1CE5186700DD326A /* Debug */,
+				B30D917E1CE5186700DD326A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B30D915D1CE5186600DD326A /* Project object */;
+}
