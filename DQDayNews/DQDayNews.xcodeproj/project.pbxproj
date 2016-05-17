@@ -27,6 +27,9 @@
 		B30D91A71CE5186700DD326A /* DQNewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B30D91A51CE5186700DD326A /* DQNewsDetailViewController.xib */; };
 		B3458D911CE573EA000E8AC2 /* DQSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3458D8F1CE573EA000E8AC2 /* DQSetViewController.m */; };
 		B3458D921CE573EA000E8AC2 /* DQSetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3458D901CE573EA000E8AC2 /* DQSetViewController.xib */; };
+		B345D6981CEB71E300F1EC0B /* DQCollectHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B345D6971CEB71E300F1EC0B /* DQCollectHelper.m */; };
+		B345D69C1CEB753F00F1EC0B /* DQMyCollectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B345D69A1CEB753F00F1EC0B /* DQMyCollectViewController.m */; };
+		B345D69D1CEB753F00F1EC0B /* DQMyCollectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B345D69B1CEB753F00F1EC0B /* DQMyCollectViewController.xib */; };
 		B3FE92231CE5FC82001B2EB9 /* DQShowImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3FE92211CE5FC82001B2EB9 /* DQShowImageViewController.m */; };
 		B3FE92241CE5FC82001B2EB9 /* DQShowImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3FE92221CE5FC82001B2EB9 /* DQShowImageViewController.xib */; };
 /* End PBXBuildFile section */
@@ -67,6 +70,11 @@
 		B3458D8E1CE573EA000E8AC2 /* DQSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQSetViewController.h; sourceTree = "<group>"; };
 		B3458D8F1CE573EA000E8AC2 /* DQSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQSetViewController.m; sourceTree = "<group>"; };
 		B3458D901CE573EA000E8AC2 /* DQSetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DQSetViewController.xib; sourceTree = "<group>"; };
+		B345D6961CEB71E300F1EC0B /* DQCollectHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQCollectHelper.h; sourceTree = "<group>"; };
+		B345D6971CEB71E300F1EC0B /* DQCollectHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQCollectHelper.m; sourceTree = "<group>"; };
+		B345D6991CEB753F00F1EC0B /* DQMyCollectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQMyCollectViewController.h; sourceTree = "<group>"; };
+		B345D69A1CEB753F00F1EC0B /* DQMyCollectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQMyCollectViewController.m; sourceTree = "<group>"; };
+		B345D69B1CEB753F00F1EC0B /* DQMyCollectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DQMyCollectViewController.xib; sourceTree = "<group>"; };
 		B3FE92201CE5FC82001B2EB9 /* DQShowImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQShowImageViewController.h; sourceTree = "<group>"; };
 		B3FE92211CE5FC82001B2EB9 /* DQShowImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQShowImageViewController.m; sourceTree = "<group>"; };
 		B3FE92221CE5FC82001B2EB9 /* DQShowImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DQShowImageViewController.xib; sourceTree = "<group>"; };
@@ -145,6 +153,8 @@
 		B30D917F1CE5186700DD326A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B345D6961CEB71E300F1EC0B /* DQCollectHelper.h */,
+				B345D6971CEB71E300F1EC0B /* DQCollectHelper.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -252,6 +262,9 @@
 				B3458D8E1CE573EA000E8AC2 /* DQSetViewController.h */,
 				B3458D8F1CE573EA000E8AC2 /* DQSetViewController.m */,
 				B3458D901CE573EA000E8AC2 /* DQSetViewController.xib */,
+				B345D6991CEB753F00F1EC0B /* DQMyCollectViewController.h */,
+				B345D69A1CEB753F00F1EC0B /* DQMyCollectViewController.m */,
+				B345D69B1CEB753F00F1EC0B /* DQMyCollectViewController.xib */,
 			);
 			path = set;
 			sourceTree = "<group>";
@@ -332,6 +345,7 @@
 				B30D919E1CE5186700DD326A /* image.bundle in Resources */,
 				B30D91751CE5186700DD326A /* Assets.xcassets in Resources */,
 				B30D919C1CE5186700DD326A /* DQNewsTableViewCell.xib in Resources */,
+				B345D69D1CEB753F00F1EC0B /* DQMyCollectViewController.xib in Resources */,
 				B30D91961CE5186700DD326A /* DQNewsViewController.xib in Resources */,
 				B30D91731CE5186700DD326A /* Main.storyboard in Resources */,
 				B30D91A71CE5186700DD326A /* DQNewsDetailViewController.xib in Resources */,
@@ -393,8 +407,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B345D69C1CEB753F00F1EC0B /* DQMyCollectViewController.m in Sources */,
 				B30D91701CE5186700DD326A /* ViewController.m in Sources */,
 				B30D91951CE5186700DD326A /* DQNewsViewController.m in Sources */,
+				B345D6981CEB71E300F1EC0B /* DQCollectHelper.m in Sources */,
 				B3458D911CE573EA000E8AC2 /* DQSetViewController.m in Sources */,
 				B30D916D1CE5186700DD326A /* AppDelegate.m in Sources */,
 				B30D916A1CE5186700DD326A /* main.m in Sources */,

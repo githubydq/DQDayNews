@@ -55,6 +55,7 @@
     if ([self.navigationItem.rightBarButtonItem.title isEqualToString:@"收藏"]) {
         [self.navigationItem.rightBarButtonItem setTitle:@"已收藏"];
         [self.navigationItem.rightBarButtonItem setTintColor:[UIColor redColor]];
+        self.block(YES);
     }else {
         [self.navigationItem.rightBarButtonItem setTitle:@"收藏"];
         [self.navigationItem.rightBarButtonItem setTintColor:[UIColor blackColor]];
@@ -73,7 +74,7 @@
     __block DQNewsDetailViewController * blockSelf = self;
     self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     AFNetworkReachabilityManager * rm = [AFNetworkReachabilityManager sharedManager];
-    NSLog(@"%d",rm.isReachable);
+//    NSLog(@"%d",rm.isReachable);
     if (rm.isReachableViaWiFi || rm.isReachableViaWWAN || true) {
         self.hud.labelText = @"加载中";
         
@@ -108,12 +109,12 @@
             if ([str containsString:@"class=\"article_content_caption\""]) {
                 NSString * string = [NSString stringWithFormat:@"<div%@",str];
                 [resultArray insertObject:string atIndex:0];
-                NSLog(@"===%@",str);
+//                NSLog(@"===%@",str);
             }
             if ([str containsString:@"class=\"article_content_text\""]) {
                 NSString * string = [NSString stringWithFormat:@"<div%@",str];
                 [resultArray addObject:string];
-                NSLog(@"===%@",str);
+//                NSLog(@"===%@",str);
             }
         }
         NSString * text = [resultArray componentsJoinedByString:@""];
@@ -126,7 +127,7 @@
 #pragma mark -
 #pragma mark web delegate
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    NSLog(@"url:%@",request.URL.absoluteString);
+//    NSLog(@"url:%@",request.URL.absoluteString);
     
     //预览图片
     if ([request.URL.scheme isEqualToString:@"image-preview"]) {
@@ -134,9 +135,8 @@
 //        path = [path stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:NSUTF8StringEncoding]];
         DQShowImageViewController * showImage = [[DQShowImageViewController alloc] init];
         showImage.url = [NSURL URLWithString:path];
-        [self.navigationController addChildViewController:showImage];
-        showImage.view.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-        [[UIApplication sharedApplication].keyWindow addSubview:showImage.view];
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:showImage animated:NO];
         return NO;
     }
     

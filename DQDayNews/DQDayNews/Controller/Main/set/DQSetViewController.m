@@ -8,6 +8,7 @@
 
 #import "DQSetViewController.h"
 #import <SDImageCache.h>
+#import "DQMyCollectViewController.h"
 
 @interface DQSetViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *table;
@@ -74,6 +75,11 @@
                 cell.detailTextLabel.text = @"0.00M";
             }
         }];
+    }else if ([cell.textLabel.text isEqualToString:@"我的收藏"]){
+        DQMyCollectViewController * collect = [[DQMyCollectViewController alloc] init];
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:collect animated:NO];
+        self.hidesBottomBarWhenPushed = NO;
     }
 }
 

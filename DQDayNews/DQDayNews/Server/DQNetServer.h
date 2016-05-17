@@ -12,4 +12,5 @@ typedef void (^ArrayBlock)(NSArray * array);
 
 @interface DQNetServer : NSObject
 +(void)networkServerGet:(ArrayBlock)block;
++(void)networkServerWithPage:(NSInteger)page Block:(ArrayBlock)block;
 @end

@@ -10,17 +10,17 @@
 #import <AFNetworkReachabilityManager.h>
 #import "DQNewsTableViewCell.h"
 #import "DQNewsDetailViewController.h"
-
 #import "DQNetServer.h"
-
 #import "DQNewsModel.h"
+#import <MJRefresh.h>
+#import "DQCollectHelper.h"
 
 #define CACHE_DATA [NSString stringWithFormat:@"%@/cachedata",[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]]
 
 @interface DQNewsViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *table;
 
-@property(nonatomic,strong)NSMutableArray * dataArray;
+@property(nonatomic,strong)NSMutableArray * dataArray;/**<news model array*/
 @end
 
 static NSString * const identify = @"newscell";
@@ -30,13 +30,14 @@ static NSString * const identify = @"newscell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self loadData];
     [self configUI];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -48,9 +49,7 @@ static NSString * const identify = @"newscell";
 
 -(NSMutableArray *)dataArray{
     if (!_dataArray) {
-        NSArray * array = [NSKeyedUnarchiver unarchiveObjectWithFile:CACHE_DATA];
         _dataArray = [[NSMutableArray alloc] init];
-        _dataArray = [NSMutableArray arrayWithArray:array];
     }
     return _dataArray;
 }
@@ -62,23 +61,55 @@ static NSString * const identify = @"newscell";
     
     [self.table registerNib:[UINib nibWithNibName:@"DQNewsTableViewCell" bundle:nil] forCellReuseIdentifier:identify];
     self.table.tableFooterView = [[UIView alloc] init];
+    //下拉刷新
+    __block DQNewsViewController * blockSelf = self;
+    self.table.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [blockSelf loadData:YES];
+        [blockSelf.table reloadData];
+        [blockSelf.table.mj_header endRefreshing];
+    }];
+    [self.table.mj_header beginRefreshing];
+    //上拉刷新
+    self.table.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [blockSelf loadData:NO];
+        [blockSelf.table reloadData];
+        [blockSelf.table.mj_footer endRefreshing];
+    }];
 }
 
 #pragma mark -
 #pragma mark load data
 
--(void)loadData{
+-(void)loadData:(BOOL)isHead{
     AFNetworkReachabilityManager * rm = [AFNetworkReachabilityManager sharedManager];
     NSLog(@"%d",rm.isReachable);
-    if (rm.isReachableViaWiFi || rm.isReachableViaWWAN || true) {
+    if (rm.isReachableViaWiFi || rm.isReachableViaWWAN || false) {
         __block DQNewsViewController * blockSelf = self;
-        [DQNetServer networkServerGet:^(NSArray *array) {
-            //缓存
-            [NSKeyedArchiver archiveRootObject:array toFile:CACHE_DATA];
-            //加载数据
-            blockSelf.dataArray = [NSMutableArray arrayWithArray:array];
+        //判断是否上拉下拉刷新
+        static NSInteger page = 1;
+        if (!isHead) {
+            if (self.dataArray.count > 0) {
+                page += 1;
+            }
+        }else{
+            page = 1;
+        }
+        //请求数据
+        [DQNetServer networkServerWithPage:page Block:^(NSArray *array) {
+            if (page == 1) {
+                //缓存
+                [NSKeyedArchiver archiveRootObject:array toFile:CACHE_DATA];
+                blockSelf.dataArray = [NSMutableArray arrayWithArray:array];
+            }else{
+                [blockSelf.dataArray addObjectsFromArray:array];
+            }
             [blockSelf.table reloadData];
         }];
+    }else{
+        //没有网络，从缓存中读取
+        NSArray * array = [NSKeyedUnarchiver unarchiveObjectWithFile:CACHE_DATA];
+        _dataArray = [NSMutableArray arrayWithArray:array];
+        [self.table reloadData];
     }
     
 }
@@ -100,6 +131,11 @@ static NSString * const identify = @"newscell";
     DQNewsDetailViewController * detail = [[DQNewsDetailViewController alloc] init];
     DQNewsModel * model = self.dataArray[indexPath.row];
     detail.url = model.url;
+    detail.block = ^(BOOL collect){
+        if (collect) {
+            [DQCollectHelper addCollect:self.dataArray[indexPath.row]];
+        }
+    };
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detail animated:NO];
     self.hidesBottomBarWhenPushed = NO;
