@@ -131,11 +131,7 @@ static NSString * const identify = @"newscell";
     DQNewsDetailViewController * detail = [[DQNewsDetailViewController alloc] init];
     DQNewsModel * model = self.dataArray[indexPath.row];
     detail.url = model.url;
-    detail.block = ^(BOOL collect){
-        if (collect) {
-            [DQCollectHelper addCollect:self.dataArray[indexPath.row]];
-        }
-    };
+    detail.model = model;
     self.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:detail animated:NO];
     self.hidesBottomBarWhenPushed = NO;

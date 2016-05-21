@@ -10,6 +10,7 @@
 #import "DQCollectHelper.h"
 #import "DQNewsModel.h"
 #import "DQNewsDetailViewController.h"
+#import "DQCollectHelper.h"
 
 @interface DQMyCollectViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *table;
@@ -28,6 +29,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self loadData];
+    [self.table reloadData];
 }
 
 #pragma mark -
@@ -64,9 +71,7 @@
         DQNewsModel * model = self.dataArray[indexPath.row];
         DQNewsDetailViewController * detail = [[DQNewsDetailViewController alloc] init];
         detail.url = model.url;
-        detail.block = ^(BOOL b){
-            
-        };
+        detail.model = model;
         self.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:detail animated:NO];
     }

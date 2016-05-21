@@ -11,6 +11,9 @@
 #import <MBProgressHUD.h>
 #import "DQShowImageViewController.h"
 
+#import "DQNewsModel.h"
+#import "DQCollectHelper.h"
+
 @interface DQNewsDetailViewController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *web;
 @property(nonatomic,strong)UIImageView * imageView;
@@ -49,16 +52,31 @@
 }
 
 -(void)configNav{
+    //判断是否收藏
+    BOOL isCollected = NO;
+    NSArray * array = [DQCollectHelper getCollect];
+    for (DQNewsModel * model in array) {
+        if ([model.url isEqualToString:self.url]) {
+            isCollected = YES;
+            break;
+        }
+    }
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"收藏" style:UIBarButtonItemStylePlain target:self action:@selector(detailRightClick)];
+    if (isCollected) {
+        [self detailRightClick];
+    }
 }
 -(void)detailRightClick{
     if ([self.navigationItem.rightBarButtonItem.title isEqualToString:@"收藏"]) {
+        //添加收藏
         [self.navigationItem.rightBarButtonItem setTitle:@"已收藏"];
         [self.navigationItem.rightBarButtonItem setTintColor:[UIColor redColor]];
-        self.block(YES);
+        [DQCollectHelper addCollect:self.model];
     }else {
+        //取消收藏
         [self.navigationItem.rightBarButtonItem setTitle:@"收藏"];
         [self.navigationItem.rightBarButtonItem setTintColor:[UIColor blackColor]];
+        [DQCollectHelper cancleCollect:self.model];
     }
 }
 
@@ -72,12 +90,14 @@
 #pragma mark load data
 -(void)loadData{
     __block DQNewsDetailViewController * blockSelf = self;
+    //创建进度控制器
     self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //网络环境监测
     AFNetworkReachabilityManager * rm = [AFNetworkReachabilityManager sharedManager];
 //    NSLog(@"%d",rm.isReachable);
-    if (rm.isReachableViaWiFi || rm.isReachableViaWWAN || true) {
+    if (rm.isReachableViaWiFi || rm.isReachableViaWWAN) {
         self.hud.labelText = @"加载中";
-        
+        [self loadAtWebView:self.web WithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
     }else{
         self.hud.labelText = @"没有网络";
         dispatch_time_t t = dispatch_time(DISPATCH_TIME_NOW, 1.0*NSEC_PER_SEC);
@@ -86,12 +106,12 @@
         });
     }
     
-    [self loadAtWebView:self.web WithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
 }
 
 #pragma mark -
 #pragma mark modify url
 -(void)loadAtWebView:(UIWebView *)webView WithRequest:(NSURLRequest *)request{
+    //对URL进行处理
     if ([request.URL.absoluteString containsString:@"http://www.i4.cn/news_detail_"]) {
         //截取最后结果网址
         NSMutableString * str = [NSMutableString stringWithString:request.URL.absoluteString];
@@ -99,7 +119,6 @@
         [str replaceCharactersInRange:wwwRange withString:@"m"];
         NSRange detailRange = [str rangeOfString:@"_detail_"];
         [str replaceCharactersInRange:detailRange withString:@"/"];
-        
         //获取网页文本
         NSString * bobytext = [NSString stringWithContentsOfURL:request.URL encoding:NSUTF8StringEncoding error:nil];
         //获取需要的文本
@@ -126,6 +145,10 @@
 
 #pragma mark -
 #pragma mark web delegate
+
+/**
+ * 将要加载
+ */
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
 //    NSLog(@"url:%@",request.URL.absoluteString);
     
@@ -142,14 +165,18 @@
     
     return YES;
 }
-
+/**
+ * 加载完成
+ */
 -(void)webViewDidFinishLoad:(UIWebView *)webView{
     [webView stringByEvaluatingJavaScriptFromString:@"function assignImageClickAction(){var imgs=document.getElementsByTagName('img');var length=imgs.length;for(var i=0; i < length;i++){img=imgs[i];img.onclick=function(){window.location.href='image-preview:'+this.src}}}"];
     [webView stringByEvaluatingJavaScriptFromString:@"assignImageClickAction();"];
 
 }
 
-
+/**
+ * 开始加载
+ */
 -(void)webViewDidStartLoad:(UIWebView *)webView{
     self.hud.labelText = @"开始加载";
     dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC);
@@ -157,6 +184,9 @@
         [self.hud hide:YES];
     });
 }
+/**
+ * 加载失败
+ */
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
     self.hud.labelText = @"加载失败";
     dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC);
@@ -165,14 +195,5 @@
     });
 }
 
-
-#pragma mark -
-#pragma mark 添加收藏与取消收藏
--(void)addCollect{
-    
-}
--(void)cancleCollect{
-    
-}
 
 @end

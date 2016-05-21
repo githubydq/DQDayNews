@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@class DQNewsModel;
 @interface DQNewsDetailViewController : UIViewController
 @property(nonatomic,copy)NSString * url;
-@property(nonatomic,copy)void (^block)(BOOL collect);
+@property(nonatomic,strong)DQNewsModel * model;
 @end

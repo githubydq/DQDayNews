@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 @class DQNewsModel;
 @interface DQCollectHelper : NSObject
++(BOOL)createCollectionPlist;
 +(BOOL)addCollect:(DQNewsModel*)model;
++(BOOL)cancleCollect:(DQNewsModel*)model;
 +(NSArray *)getCollect;
 @end

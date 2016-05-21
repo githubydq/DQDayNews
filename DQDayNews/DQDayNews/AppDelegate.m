@@ -10,6 +10,7 @@
 #import <AFNetworkReachabilityManager.h>
 
 #import "DQMainViewController.h"
+#import "DQCollectHelper.h"
 
 @interface AppDelegate ()
 
@@ -29,12 +30,15 @@
 #pragma mark app delegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //打印documents地址
+    NSLog(@"%@",NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject);
+    //创建收藏plist文件
+    [DQCollectHelper createCollectionPlist];
+    
+    //设置跟视图
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
     [self intoMain];
-    
     [self.window makeKeyAndVisible];
-    
     // 监控网络状态
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     return YES;
